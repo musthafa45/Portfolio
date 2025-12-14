@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ik Hands | Mohamed Musthafa</title>
+  <title>IK Hands | Mohamed Musthafa</title>
 
   <!-- Styles & Fonts -->
   <link rel="stylesheet" href="../../style.css">
@@ -21,17 +21,15 @@
 
     <!-- 🧩 Main Card -->
     <div class="card">
-      <h1>Procedural Hands (Ik)</h1>
+      <h1>Procedural Hands (IK)</h1>
       <div class="status-tag done">Released</div>
 
       <!-- 🖼️ Preview Image -->
-      <!-- <img src="images/preview.jpg" alt="Wander Ant Scenshot" class="preview-image"> -->
+      <!-- <img src="images/preview.jpg" alt="IK Hands Screenshot" class="preview-image"> -->
 
-      <!-- 📝 mechanism Description -->
+      <!-- 📝 Mechanism Description -->
       <p>
-        <strong>Ik Hands</strong> is a creative puzzle adventure where players guide a lost ant through tricky traps to reach home.
-        The gameplay blends logic, timing, and exploration — all crafted with care using Unity.
-        The ant navigates through laser traps, moving tiles, and secret portals while players build paths using drag-and-drop mechanics.
+        <strong>IK Hands</strong> is an advanced object-holding mechanism inspired by the smooth interaction system in <em>Little Nightmares</em>. Players can seamlessly grab, hold, and throw objects with realistic hand positioning and animations. Built using Unity's Animation Rigging system and inverse kinematics.
       </p>
 
       <!-- 🎥 Trailer + Screenshot Carousel -->
@@ -44,7 +42,7 @@
             <iframe
               id="yt-trailer"
               src="https://www.youtube.com/embed/xWW-ebBJq0E?enablejsapi=1&origin=http://localhost"
-              title="Ik Hands Trailer"
+              title="IK Hands Trailer"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
@@ -64,62 +62,56 @@
       <!-- 🧠 Core Features -->
       <h3>🧠 Core Features</h3>
       <ul class="feature-list">
-        <li>Unique pipe-connection puzzles with real-time ant movement</li>
-        <li>Visually clean cartoonish style with black outlines</li>
-        <li>Smart level design encouraging creative thinking</li>
-        <li>Playable on mobile</li>
-        <li>Ads designed for minimal interruption (extra pipes, energy rewards)</li>
-        <li>Power-ups and traps</li>
-        <li>Level-based difficulty progression</li>
+        <li>Grab any object with procedurally animated IK hands</li>
+        <li>Smooth throwing and dropping mechanics with realistic physics</li>
+        <li>Dynamic hand positioning that adapts to object size and shape</li>
+        <li>Customizable finger animations for different object types</li>
+        <li>Intelligent object detection system with nearest-object selection</li>
+        <li>Direction-aware grabbing based on player orientation</li>
       </ul>
 
       <!-- ⚙️ Technologies Used -->
       <h3>🧩 Technologies Used</h3>
-<div class="tech-stack">
-  <span class="tool-item"><i class="fab fa-unity"></i> Unity</span>
-  <span class="tool-item"><i class="fas fa-code"></i> C#</span>
-  <span><i class="fa-solid fa-link"></i>IK</span>
-  <span><i class="fa-solid fa-vector-square"></i>Cross Product</span>
-</div>
+      <div class="tech-stack">
+        <span class="tool-item"><i class="fab fa-unity"></i> Unity</span>
+        <span class="tool-item"><i class="fas fa-code"></i> C#</span>
+        <span><i class="fa-solid fa-link"></i> Animation Rigging</span>
+        <span><i class="fa-solid fa-vector-square"></i> Cross Product Math</span>
+        <span><i class="fa-solid fa-cube"></i> Inverse Kinematics</span>
+      </div>
 
-
-      <!-- 📜 About the Game -->
+      <!-- 📜 About the Mechanism -->
       <h3>📜 About the Mechanism</h3>
       <p>
-        The game follows a small ant who lost its home and is trying to find its way back, representing persistence and creativity.
-        After gathering feedback from friends, family, and players, the game was refined and released — reaching thousands of downloads with positive reviews.
+        This system utilizes cross product calculations to dynamically determine left and right grab points from the object's collider center. Raycasts are performed from these calculated positions, which adjust automatically based on the player's orientation relative to the object. Unity's Animation Rigging package provides the foundation for realistic hand placement and finger articulation, creating natural-looking interactions regardless of object dimensions.
       </p>
 
       <!-- 💡 Challenges -->
       <h3>💡 Challenges</h3>
       <ul class="challenge-list">
-        <li>Developed a precise grid-based snap system for seamless drag-and-drop gameplay.</li>
-        <li>Resolved complex overlapping and alignment issues during path creation.</li>
-        <li>Implemented procedural object spawning to enhance replayability and variety.</li>
-        <li>Created a custom light collision detection system for dynamic interactions.</li>
-        <li>Built laser effects using Shader Graph for optimized visual performance.</li>
-        <li>Optimized physics calculations to maintain a consistent 60 FPS experience.</li>
-        <li>Designed and animated UI elements for smooth and engaging transitions.</li>
-        <li>Composed and integrated sound effects that perfectly match the game’s tone and atmosphere.</li>
+        <li>Calculating dynamic grab positions based on player direction using cross product mathematics</li>
+        <li>Creating smooth hand transitions when interacting with objects of varying sizes and shapes</li>
+        <li>Implementing accurate hand rotation based on raycast hit normals for natural surface contact</li>
+        <li>Synchronizing lean-in and grabbing animations to ensure timing matches player input</li>
+        <li>Optimizing IK solver performance for real-time interaction without frame drops</li>
       </ul>
 
       <!-- 🕹️ Availability -->
       <h3>🎮 Availability</h3>
-      <p>Available on <strong>GitHub.</strong></p>
+      <p>Available as an <strong>open-source project on GitHub</strong> for developers and Unity enthusiasts.</p>
 
       <!-- 🔗 Links -->
       <div class="icon-row-availability">
-
         <a href="https://github.com/musthafa45/Ik-Object-Holding"
-   title="View on GitHub" target="_blank">
-  <i class="fa-brands fa-github" style="font-size: 48px; color: #ffffff;"></i>
-</a>
+           title="View on GitHub" target="_blank">
+          <i class="fa-brands fa-github" style="font-size: 48px; color: #ffffff;"></i>
+        </a>
       </div>
     </div>
 
     <!-- 🧾 Footer -->
     <footer>
-      <p>© 2025 Mohamed Musthafa | Procedural Hands</p>
+      <p>© 2025 Mohamed Musthafa | Procedural IK Hands System</p>
     </footer>
   </div>
 
