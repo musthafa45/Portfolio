@@ -274,7 +274,7 @@ h3.subtitle {
   transition: transform 0.2s ease;
 }
 
-.gplay-badge:hover {
+.gplay-badge :hover {
   transform: scale(1.05);
 }
 
@@ -285,13 +285,16 @@ h3.subtitle {
 }
 
 .itch-badge:hover,
-.gplay-badge:hover {
+.gplay-badge:hover,
+.github-badge:hover {
   transform: scale(1.1);
 }
 
 .github-badge {
   height: 35px;
   width: auto;
+  border-radius: 3px;
+  transition: transform 0.2s ease;
 }
 
 /* ---------- Tools Section ---------- */
