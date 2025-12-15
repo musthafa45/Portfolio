@@ -152,6 +152,21 @@ h3.subtitle {
   display: none;                  /* hide scrollbar in Chrome/Safari */
 }
 
+.icon-row-availability {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 8px;
+}
+
+.icon-row-availability a img {
+  height: 44px;       /* 🔑 same height for all badges */
+  width: auto;        /* keep aspect ratio */
+  max-width: 100%;
+}
+
 .menu-item {
   flex: 0 0 auto;                 /* 🔒 prevents shrinking */
   font-size: 1.6rem; /* smaller than 2rem */
@@ -738,6 +753,10 @@ footer {
   .project-card h3 { font-size: 0.95rem; }
   .project-card p { font-size: 0.85rem; }
   .project-card a { font-size: 0.9rem; }
+
+  .icon-row-availability a img {
+    height: 36px;
+  }
 }
 
 /* ------ Mobile Compact Mode ------ */
@@ -769,5 +788,11 @@ footer {
   .tool-item i {
     font-size: 1rem;        /* smaller icon */
     margin-right: 1px;
+  }
+}
+
+@media (max-width: 360px) {
+  .icon-row-availability {
+    flex-direction: column;
   }
 }
