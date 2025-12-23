@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Rover | Mohamed Musthafa</title>
+
+  <!-- Styles & Fonts -->
+  <link rel="stylesheet" href="../../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- 🔙 Back Link -->
+    <a href="../../index.html" class="back-link">
+      ← Back to Portfolio
+    </a>
+
+    <!-- 🧩 Main Card -->
+    <div class="card">
+      <h1>Project Rover</h1>
+      <div class="status-tag done">Released</div>
+
+      <!-- 📝 Game Description -->
+  <p>
+  <strong>Project Rover</strong> is a fun project where a rover collects minerals from different locations across an alien planet. Built in Unity with C# scripting, featuring intuitive controls and engaging gameplay mechanics.
+  </p>
+
+      <!-- 🎥 Trailer + Screenshot Carousel -->
+      <div class="screenshot-carousel">
+        <button class="arrow left">&#10094;</button>
+
+        <div class="carousel-track">
+          <!-- 🖼️ Screenshots -->
+          <div class="carousel-item"><img src="images/screenshot1.gif" alt="Last Soldier Screenshot 1"></div>
+          <div class="carousel-item"><img src="images/screenshot2.gif" alt="Last Soldier Screenshot 2"></div>
+        </div>
+
+        <button class="arrow right">&#10095;</button>
+      </div>
+
+   <!-- 🧠 Core Features -->
+      <h3>🧠 Features on Graphics</h3>
+      <ul class="feature-list">
+        <li> Stylized cel-shaded lighting with support for normal, metallic, and emissive maps</li>
+        <li> PBR-lite surface options including height, occlusion, and transparency</li>
+        <li> Basic outline rendering using reverse hull (outline works in Forward rendering mode)</li>
+        <li> Real-time and baked lighting support via Ambient Spherical Harmonics</li>
+        <li> Highly customizable per material using LWGUI (clean and user-friendly inspector)</li>
+      </ul>
+
+      <!-- 🧠 Core Features -->
+      <h3>🧠 Features on Gameplay Mechanics</h3>
+      <ul class="feature-list">
+        <li> Stylized cel-shaded lighting with support for normal, metallic, and emissive maps</li>
+        <li> PBR-lite surface options including height, occlusion, and transparency</li>
+        <li> Basic outline rendering using reverse hull (outline works in Forward rendering mode)</li>
+        <li> Real-time and baked lighting support via Ambient Spherical Harmonics</li>
+        <li> Highly customizable per material using LWGUI (clean and user-friendly inspector)</li>
+      </ul>
+
+      <!-- ⚙️ Technologies Used -->
+      <h3>🧩 Technologies Used</h3>
+      <div class="tech-stack">
+        <span class="tool-item"><i class="fa-brands fa-unity"></i> Unity 3D</span>
+        <span class="tool-item"><i class="fa-solid fa-code"></i> C#</span>
+        <span class="tool-item"><i class="fas fa-cube"></i> HLSL</span>
+        <span class="tool-item"><i class="fas fa-database"></i> Scriptable Objects</span>
+      </div>
+
+      <!-- 📜 About the Project -->
+      <h3>📜 About the Project</h3>
+      <p>
+       This Unity project features a stylized rover scene designed to experiment with cel shading techniques and explore the rendering limits of Unity's Built-in Render Pipeline (BiRP).
+        It uses the Stylized Cel Shader (SCS) by Symmasolan, a PBR-lite shader that supports toon-like shading with outline effects and real-time lighting support.
+      </p>
+
+<!-- 💡 Challenges -->
+      <!-- <h3>💡 Development Challenges</h3>
+      <ul class="challenge-list">
+        <li><strong>Mouse-Aimed Shooting:</strong> Calculating accurate aim direction and projectile trajectory while handling player sprite flipping</li>
+        <li><strong>Animation Blending:</strong> Integrating melee attack animations that properly override idle and walking states without breaking transitions</li>
+        <li><strong>Flying Enemy AI:</strong> Programming intelligent flight patterns with attack behaviors and pathfinding toward invasion targets</li>
+        <li><strong>Game Jam Time Management:</strong> Balancing gameplay difficulty, weapon variety, and enemy progression within a tight deadline</li>
+        <li><strong>Core Systems:</strong> Implementing interconnected spawn systems, wave management logic, and dynamic UI updates</li>
+      </ul> -->
+
+      <!-- 🕹️ Availability -->
+      <h3>🎮 Availability</h3>
+      <p>Available as an open-source project on <strong>GitHub</strong> for developers and Unity enthusiasts.</p>
+
+      <!-- 🔗 Links -->
+      <div class="icon-row-availability">
+        <a href="https://github.com/Parven05/Project-Rover"
+           title="View on GitHub" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub-View_Project-181717?style=for-the-badge&logo=github&logoColor=white" 
+                alt="View on GitHub" class="github-badge">
+        </a>
+        
+      </div>
+
+    </div>
+
+    <!-- 🧾 Footer -->
+    <footer>
+      <p>© 2025 Mohamed Musthafa | Dark City Defender</p>
+    </footer>
+  </div>
+
+  <!-- 🎞️ Carousel Script -->
+  <script>
+    const carousel = document.querySelector('.carousel-track');
+    const items = document.querySelectorAll('.carousel-item');
+    const prevBtn = document.querySelector('.arrow.left');
+    const nextBtn = document.querySelector('.arrow.right');
+    let currentIndex = 0;
+
+    function scrollToIndex(index) {
+      const scrollPos = items[index].offsetLeft;
+      carousel.scrollTo({ left: scrollPos, behavior: 'smooth' });
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % items.length;
+      scrollToIndex(currentIndex);
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      scrollToIndex(currentIndex);
+    });
+  </script>
+</body>
+</html>
