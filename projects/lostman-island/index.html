@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Last Soldier | Mohamed Musthafa</title>
+
+  <!-- Styles & Fonts -->
+  <link rel="stylesheet" href="../../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- 🔙 Back Link -->
+    <a href="../../index.html" class="back-link" onclick="saveScroll()">
+  ← Back to Portfolio
+   </a>
+
+
+    <!-- 🧩 Main Card -->
+    <div class="card">
+      <h1>Last Soldier</h1>
+      <div class="status-tag done">Released</div>
+
+      <!-- 📝 Game Description -->
+      <p>
+        <strong>Last Soldier</strong> is a Game Jam entry featuring a third-person survival game where you play as the last soldier fighting against enemy tanks. 
+        Built in Unity with responsive controls, strategic gameplay, and advanced mathematics including trigonometry and dot product calculations for precise aiming and tactical movement.
+      </p>
+
+      <!-- 🎥 Trailer + Screenshot Carousel -->
+      <div class="screenshot-carousel">
+        <button class="arrow left">&#10094;</button>
+
+        <div class="carousel-track">
+          <!-- 🎬 YouTube Trailer -->
+          <div class="carousel-item video-item">
+            <iframe
+              id="yt-trailer"
+              src="https://www.youtube.com/embed/BdnftCcTJtQ?enablejsapi=1&origin=http://localhost"
+              title="Last Soldier Trailer"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <!-- 🖼️ Screenshots -->
+          <div class="carousel-item"><img src="images/screenshot1.jpg" alt="Last Soldier Screenshot 1"></div>
+          <div class="carousel-item"><img src="images/screenshot2.jpg" alt="Last Soldier Screenshot 2"></div>
+          <div class="carousel-item"><img src="images/screenshot3.jpg" alt="Last Soldier Screenshot 3"></div>
+          <div class="carousel-item"><img src="images/screenshot4.jpg" alt="Last Soldier Screenshot 4"></div>
+        </div>
+
+        <button class="arrow right">&#10095;</button>
+      </div>
+
+      <!-- 🧠 Core Features -->
+      <h3>🧠 Core Features</h3>
+      <ul class="feature-list">
+        <li>Place bombs on tanks or walls to destroy them strategically</li>
+        <li>Custom tank patrol system using point-to-point movement (no NavMesh)</li>
+        <li>Cinematic death cutscene with dramatic camera angles</li>
+        <li>Tank turrets dynamically rotate and fire at player position</li>
+        <li>Tactical cover system—hide behind walls and fences to avoid tank attacks</li>
+        <li>Audio alert system that triggers when tanks aim at the player</li>
+      </ul>
+
+      <!-- ⚙️ Technologies Used -->
+      <h3>🧩 Technologies Used</h3>
+      <div class="tech-stack">
+        <span><i class="fa-brands fa-unity"></i> Unity 3D</span>
+        <span><i class="fa-solid fa-code"></i> C#</span>
+        <span><i class="fa-solid fa-ruler-combined"></i> Trigonometry</span>
+        <span><i class="fa-solid fa-circle-dot"></i> Dot Product Math</span>
+      </div>
+
+      <!-- 📜 About the Game -->
+      <h3>📜 About the Game</h3>
+      <p>
+        This game was developed as part of a Game Jam, challenging me to create an engaging third-person survival experience within a limited timeframe. 
+        The player assumes the role of the last soldier, navigating a battlefield filled with six hostile tanks. 
+        Before time runs out, the player must destroy all six tanks using strategically placed bombs. Failure to eliminate all tanks results in an airstrike 
+        that obliterates the entire area. Survival depends on tactical thinking, precise timing, and complete destruction of all enemy forces.
+      </p>
+
+      <!-- 💡 Challenges -->
+      <h3>💡 Challenges</h3>
+      <ul class="challenge-list">
+        <li>Implementing accurate aim and shoot calculations based on player distance using trigonometry</li>
+        <li>Creating smooth bomb placement animations synchronized with gameplay logic</li>
+        <li>Designing intelligent tank patrol paths without relying on Unity's NavMesh system</li>
+        <li>Balancing game difficulty and mechanics within strict Game Jam time constraints</li>
+        <li>Optimizing turret rotation and tracking systems for real-time performance</li>
+      </ul>
+
+      <!-- 🕹️ Availability -->
+      <h3>🎮 Availability</h3>
+      <p>Available as a playable game on <strong>Itch.io</strong> and an open-source project on <strong>GitHub</strong> for developers and Unity enthusiasts.</p>
+
+      <!-- 🔗 Links -->
+      <div class="icon-row-availability">
+        <a href="https://musthafa45.itch.io/the-last-soldier" 
+           title="Play on Itch.io" target="_blank">
+          <img src="https://static.itch.io/images/badge-color.svg" 
+               alt="Play on Itch.io" class="itch-badge">
+        </a>
+
+        <a href="https://github.com/musthafa45/The-Lost-Man"
+           title="View on GitHub" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub-View_Project-181717?style=for-the-badge&logo=github&logoColor=white" 
+                alt="View on GitHub" class="github-badge">
+        </a>
+        
+      </div>
+
+    </div>
+
+    <!-- 🧾 Footer -->
+    <footer>
+      <p>© 2025 Mohamed Musthafa | Last Soldier</p>
+    </footer>
+  </div>
+
+  <!-- 🎞️ Carousel Script -->
+  <script>
+    const carousel = document.querySelector('.carousel-track');
+    const items = document.querySelectorAll('.carousel-item');
+    const prevBtn = document.querySelector('.arrow.left');
+    const nextBtn = document.querySelector('.arrow.right');
+    let currentIndex = 0;
+
+    function scrollToIndex(index) {
+      const scrollPos = items[index].offsetLeft;
+      carousel.scrollTo({ left: scrollPos, behavior: 'smooth' });
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % items.length;
+      scrollToIndex(currentIndex);
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      scrollToIndex(currentIndex);
+    });
+  </script>
+</body>
+</html>
