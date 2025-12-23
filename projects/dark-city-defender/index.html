@@ -27,7 +27,7 @@
 
       <!-- 📝 Game Description -->
       <p>
-        <strong>Dark City Defender</strong> is a Game Jam entry featuring
+        <strong>Dark City Defender</strong> is a Game Jam entry featuring a 2D survival game where you play as the city's protector, fighting against dark enemy creatures. Built in Unity with a custom mouse-position shooting system and dynamic special effects.
       </p>
 
       <!-- 🎥 Trailer + Screenshot Carousel -->
@@ -58,15 +58,15 @@
         <button class="arrow right">&#10095;</button>
       </div>
 
-      <!-- 🧠 Core Features -->
+   <!-- 🧠 Core Features -->
       <h3>🧠 Core Features</h3>
       <ul class="feature-list">
-        <li>Place bombs on tanks or walls to destroy them strategically</li>
-        <li>Custom tank patrol system using point-to-point movement (no NavMesh)</li>
-        <li>Cinematic death cutscene with dramatic camera angles</li>
-        <li>Tank turrets dynamically rotate and fire at player position</li>
-        <li>Tactical cover system—hide behind walls and fences to avoid tank attacks</li>
-        <li>Audio alert system that triggers when tanks aim at the player</li>
+        <li> Wave-based survival gameplay - eliminate all enemies to advance</li>
+        <li> Precision mouse-aimed shooting system for accurate 2D combat</li>
+        <li> Dynamic blood effects with sprite mask splatters on environment objects</li>
+        <li> Random weapon and ammo pickups spawn throughout the battlefield</li>
+        <li> Immersive environments built with Unity's URP 2D rendering pipeline</li>
+        <li> Atmospheric sound design enhancing the combat experience</li>
       </ul>
 
       <!-- ⚙️ Technologies Used -->
@@ -74,27 +74,29 @@
       <div class="tech-stack">
         <span><i class="fa-brands fa-unity"></i> Unity 3D</span>
         <span><i class="fa-solid fa-code"></i> C#</span>
-        <span><i class="fa-solid fa-ruler-combined"></i> Trigonometry</span>
-        <span><i class="fa-solid fa-circle-dot"></i> Dot Product Math</span>
+        <span class="tool-item"><i class="fas fa-atom"></i> 2D Physics</span>
+        <span class="tool-item"><i class="fas fa-database"></i> Scriptable Objects</span>
       </div>
 
       <!-- 📜 About the Game -->
       <h3>📜 About the Game</h3>
       <p>
-        This game was developed as part of a Game Jam, challenging me to create an engaging third-person survival experience within a limited timeframe. 
-        The player assumes the role of the last soldier, navigating a battlefield filled with six hostile tanks. 
-        Before time runs out, the player must destroy all six tanks using strategically placed bombs. Failure to eliminate all tanks results in an airstrike 
-        that obliterates the entire area. Survival depends on tactical thinking, precise timing, and complete destruction of all enemy forces.
+       This game was developed as part of a Game Jam challenge, creating an engaging 2D survival experience within a limited timeframe. 
+       Players take on the role of the city's defender, protecting against invading dark creatures. 
+       Each wave must be cleared of all enemies before they overrun the city—failure means the destruction of your home. 
+       Survival depends on scavenging ammunition and weapons scattered across the area.
+       The game features a custom mouse-aimed shooting system, dynamic blood effects using sprite masks, and immersive environments created with Unity's URP 2D rendering pipeline.
+       Atmospheric sound design enhances the intensity, delivering an engaging combat experience.
       </p>
 
-      <!-- 💡 Challenges -->
-      <h3>💡 Challenges</h3>
+<!-- 💡 Challenges -->
+      <h3>💡 Development Challenges</h3>
       <ul class="challenge-list">
-        <li>Implementing accurate aim and shoot calculations based on player distance using trigonometry</li>
-        <li>Creating smooth bomb placement animations synchronized with gameplay logic</li>
-        <li>Designing intelligent tank patrol paths without relying on Unity's NavMesh system</li>
-        <li>Balancing game difficulty and mechanics within strict Game Jam time constraints</li>
-        <li>Optimizing turret rotation and tracking systems for real-time performance</li>
+        <li><strong>Mouse-Aimed Shooting:</strong> Calculating accurate aim direction and projectile trajectory while handling player sprite flipping</li>
+        <li><strong>Animation Blending:</strong> Integrating melee attack animations that properly override idle and walking states without breaking transitions</li>
+        <li><strong>Flying Enemy AI:</strong> Programming intelligent flight patterns with attack behaviors and pathfinding toward invasion targets</li>
+        <li><strong>Game Jam Time Management:</strong> Balancing gameplay difficulty, weapon variety, and enemy progression within a tight deadline</li>
+        <li><strong>Core Systems:</strong> Implementing interconnected spawn systems, wave management logic, and dynamic UI updates</li>
       </ul>
 
       <!-- 🕹️ Availability -->
