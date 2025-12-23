@@ -445,6 +445,56 @@ h3.subtitle {
 .status-tag.done { background-color: #27ae60; }
 .status-tag.progress { background-color: #e67e22; }
 
+/* ---------- Feature List (Collapsible) ---------- */
+.feature-list details {
+  cursor: pointer;
+}
+
+.feature-list summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.feature-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.arrow1 {
+   transition: transform 0.25s ease;
+   color: #fff; /* or #000 depending on BG */
+}
+
+details[open] .arrow1 {
+  transform: rotate(180deg);
+}
+
+details[open] summary {
+  color: #3aff7a;
+}
+
+.feature-list p {
+  margin: 8px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+summary {
+  color: #ddd; /* default */
+  transition: color 0.2s ease;
+}
+
+summary:hover {
+  color: #3aff7a; /* green highlight */
+}
+
+summary:hover .arrow12 {
+  transform: translateY(2px);
+}
+
+
 /* ---------- Tech Stack ---------- */
 .tech-stack {
   display: flex;
