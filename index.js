@@ -56,3 +56,16 @@ startBtn.addEventListener('click', () => {
 window.addEventListener('load', updatePointer);
 window.addEventListener('resize', updatePointer); // reposition if window changes
 
+  // Save scroll position
+  window.addEventListener("beforeunload", () => {
+    sessionStorage.setItem("scrollY", window.scrollY);
+  });
+
+  // Restore scroll position
+  window.addEventListener("load", () => {
+    const scrollY = sessionStorage.getItem("scrollY");
+    if (scrollY !== null) {
+      window.scrollTo(0, parseInt(scrollY));
+    }
+  });
+
