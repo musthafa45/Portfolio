@@ -55,6 +55,7 @@ startBtn.addEventListener('click', () => {
 // Initialize pointer on page load
 window.addEventListener('load', updatePointer);
 window.addEventListener('resize', updatePointer); // reposition if window changes
+window.scrollTo({ top: y, behavior: "smooth" });
 
   // Save scroll position
   window.addEventListener("beforeunload", () => {
@@ -69,3 +70,14 @@ window.addEventListener('resize', updatePointer); // reposition if window change
     }
   });
 
+
+  function saveScroll() {
+    sessionStorage.setItem("portfolioScroll", window.scrollY);
+  }
+
+  window.addEventListener("load", () => {
+    const y = sessionStorage.getItem("portfolioScroll");
+    if (y !== null) {
+      window.scrollTo(0, parseInt(y));
+    }
+  });
