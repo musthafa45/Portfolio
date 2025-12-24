@@ -76,6 +76,7 @@
               allowfullscreen>
             </iframe>
           </div>
+
           <div class="carousel-item video-item">
             <iframe
               id="yt-trailer"
@@ -86,6 +87,29 @@
               allowfullscreen>
             </iframe>
           </div>
+
+          <div class="carousel-item video-item">
+            <iframe
+              id="yt-trailer"
+              src="https://www.youtube.com/embed/34FdmQDq_dk?enablejsapi=1&origin=http://localhost"
+              title="Collectables And Examination System Trailer"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="carousel-item video-item">
+            <iframe
+              id="yt-trailer"
+              src="https://www.youtube.com/embed/SeS1iVX8ScY?enablejsapi=1&origin=http://localhost"
+              title="Collectables And Examination System Trailer"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+
         </div>
         <button class="arrow right">&#10095;</button>
       </div>
@@ -211,7 +235,63 @@ This ensures modern input handling with improved control, flexibility, and scala
     </details>
   </li>
 
+ <li>
+    <details>
+      <summary>
+        Radar System Enemy Detection
+        <span class="arrow1">▼</span>
+      </summary>
+      <p>
+       This system implements a rotating radar mechanism used to detect nearby entities within a defined radius.<br>
+The radar continuously rotates both in world space and UI space to simulate an analog scanning effect.<br>
+<br>
+Entity detection is handled using Physics.OverlapSphereNonAlloc for performance-friendly scanning within a configurable detection radius.<br>
+Each detected object is evaluated using dot product calculations to ensure it lies within the radar’s forward scan angle.<br>
+<br>
+Once an entity passes the angle threshold, it is checked for the BaseEntity component.<br>
+Detected entities are stored in a list to prevent duplicate UI icons from being created.<br>
+<br>
+For each valid entity, a ping icon is instantiated on the radar UI.<br>
+The icon position is calculated by converting the world-space distance to radar-space coordinates and scaling it relative to the radar UI size.<br>
+<br>
+The icon position is rotated to match the player’s forward direction, ensuring accurate orientation on the radar display.<br>
+Icons are clamped within the radar radius to prevent them from appearing outside the UI bounds.<br>
+<br>
+When an entity is destroyed, its corresponding radar icon is automatically removed via an event callback.<br>
+This ensures the radar UI always reflects the current state of the environment.<br>
 
+
+     </p>
+
+    </details>
+  </li>
+
+   <li>
+    <details>
+      <summary>
+        SCP 173 Ai Detection And Movement
+        <span class="arrow1">▼</span>
+      </summary>
+      <p>
+       This system implements an SCP-173 inspired enemy AI using a simple state-based behavior system.<br>
+The enemy operates with three states: Idle, Chase, and Attack.<br>
+<br>
+The Chase behavior is driven by Unity’s NavMeshAgent, allowing the enemy to navigate toward the player using NavMesh pathfinding.<br>
+<br>
+The enemy continuously checks whether it is visible to the player using camera frustum testing.<br>
+If the enemy is within the player’s line of sight, it immediately stops moving and its animation is paused, simulating SCP-173’s “do not move while observed” behavior.<br>
+<br>
+A raycast is used to determine whether the enemy is behind walls or other obstacles.<br>
+If the player is not directly visible due to obstructions, the enemy is allowed to move toward the player.<br>
+<br>
+When the enemy has a clear line of sight and is being observed by the player, its NavMesh destination is set to its current position, freezing movement.<br>
+When the enemy is not being observed or is hidden behind walls, it resumes chasing the player.<br>
+<br>
+This combination of camera frustum checks and raycast-based visibility creates a horror-accurate SCP-173 movement behavior.<br>
+     </p>
+
+    </details>
+  </li>
 </ul>
 
 
