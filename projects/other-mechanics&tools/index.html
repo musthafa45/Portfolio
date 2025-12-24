@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lostman Island | Mohamed Musthafa</title>
+
+  <!-- Styles & Fonts -->
+  <link rel="stylesheet" href="../../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- 🔙 Back Link -->
+    <a href="../../index.html" class="back-link" onclick="saveScroll()">
+  ← Back to Portfolio
+    </a>
+
+
+    <!-- 🧩 Main Card -->
+    <div class="card">
+      <h1>Lostman Island</h1>
+      <div class="status-tag progress">In Progress</div>
+
+      <!-- 📝 Game Description -->
+      <p>
+        <strong>Lostman Island</strong> is an FPS game where you're stuck on an island. Hunt fish, grab fruits, and build a boat to escape. Survive the nights against monster. Craft your way to freedom through day and night challenges.
+      </p>
+
+      <!-- 🎥 Trailer + Screenshot Carousel -->
+      <div class="screenshot-carousel">
+        <button class="arrow left">&#10094;</button>
+        <div class="carousel-track">
+          <!-- 🎬 YouTube Trailer -->
+          <div class="carousel-item video-item">
+            <iframe
+              id="yt-trailer"
+              src="https://www.youtube.com/embed/vxqZ7yKhmmM?enablejsapi=1&origin=http://localhost"
+              title="Lostman Island Trailer"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="carousel-item video-item">
+            <iframe
+              id="yt-trailer"
+              src="https://www.youtube.com/embed/p_wsFFid0uQ?enablejsapi=1&origin=http://localhost"
+              title="Lostman Island Trailer"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="carousel-item video-item">
+            <iframe
+              id="yt-trailer"
+              src="https://www.youtube.com/embed/0P2FT1_UsQE?enablejsapi=1&origin=http://localhost"
+              title="Lostman Island Trailer"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="carousel-item video-item">
+            <iframe
+              id="yt-trailer"
+              src="https://www.youtube.com/embed/87nAOztd7iQ?enablejsapi=1&origin=http://localhost"
+              title="Lostman Island Trailer"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="carousel-item video-item">
+            <iframe
+              id="yt-trailer"
+              src="https://www.youtube.com/embed/tPcH4hJVf38?enablejsapi=1&origin=http://localhost"
+              title="Lostman Island Trailer"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        <button class="arrow right">&#10095;</button>
+      </div>
+
+<h3>🧠 Core Features</h3>
+
+<ul class="feature-list">
+
+  <li>
+    <details>
+      <summary>
+        Spear-based fishing system
+        <span class="arrow1">▼</span>
+      </summary>
+     <p>
+  I am utilizing a basic Rigidbody with AddForce to propel an object towards a spear.<br><br>
+
+  The direction is derived from the camera towards the raycast hit point,
+  then normalized to the spear's position.<br><br>
+
+  When the spear hits the fish at its body position,
+  I've already set up an empty object on the spear.<br><br>
+
+  Upon impact, this object adjusts its position based on the fish's position.<br><br>
+
+  The fish has a script called <strong>'Follow'</strong> that tracks this spear edge point's
+  position and rotation.<br><br>
+
+  Additionally, there's a static event that triggers all fish to become alert
+  and panic, resembling real-world behavior.
+</p>
+
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>
+        Coconut gathering using thrown stones
+        <span class="arrow1">▼</span>
+      </summary>
+     <p>
+  These coconut trees can generate coconuts procedurally and also spawn stones within a specific radius
+  by utilizing a random UnitSphere.<br><br>
+
+  Whenever a coconut is hit by a stone, it gradually weakens due to the impact.<br><br>
+
+  If its strength falls below zero, it will fall down by setting
+  <strong>rb.isKinematic</strong> to <strong>false</strong>.<br><br>
+
+  As it falls, a <strong>'Gatherable'</strong> script and ScriptableObject data are added
+  to the fallen coconut, allowing players to pick it up, store it,
+  and use it later.
+</p>
+
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>
+        Vehicle driving with fuel management and storage
+        <span class="arrow1">▼</span>
+      </summary>
+      <h3>🚚 Truck Movement</h3>
+      <p>       
+  In the truck driving simulation, I utilized simple wheel colliders and torque
+  to control vehicle movement.<br><br>
+
+  When entering or exiting the truck, a smooth fading effect is applied.<br><br>
+
+  During the fade process, the player is repositioned to the truck seat.
+  Once the player reaches the seat, all player colliders and sensors are disabled.<br><br>
+
+  After that, the truck controller is enabled, allowing the player to drive
+  the vehicle while enjoying a full 360-degree camera view.
+      </p>
+<h3>📦 Storage on the Back</h3>
+      <p>
+  The game requires transporting a large number of objects from one place
+  to another using the truck’s back storage.<br><br>
+
+  While transporting these objects, it is important to ensure they do not fall
+  due to terrain irregularities or sudden movement.<br><br>
+
+  To solve this, I implemented a simple alignment AI that allocates a dedicated
+  space for each stored item.<br><br>
+
+  This system continuously maintains proper alignment and prevents objects
+  from collapsing or interfering with one another until the player picks them up.
+</p>
+<h3>⛽ Fuel System</h3>
+<p>
+  The fuel system is built around an interactable area highlighted using an
+  outline tool to clearly indicate where interaction is possible.<br><br>
+
+  The system checks whether the player interacts with the fuel tank
+  while holding a fuel can.<br><br>
+
+  If the conditions are met, the fuel is transferred to refill the truck,
+  and the fuel can is destroyed to indicate that the refueling process
+  has been completed.
+</p>
+
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>
+        Hiding system with sound-based enemy detection
+        <span class="arrow1">▼</span>
+      </summary>
+     <p>
+  The hiding mechanic was inspired by <strong>Fear to Fathom</strong>,
+  aiming to recreate a similar sense of tension in a different way.<br><br>
+
+  I implemented a simple door interaction system using <strong>DOTween</strong>
+  to handle smooth opening and closing animations.<br><br>
+
+  When the door is opened or closed, an internal collider checks whether
+  the player is positioned inside the hiding area.<br><br>
+
+  If the player is inside, the system switches the door material to a
+  transparent version and activates the sound detection system,
+  allowing enemies to react dynamically to player noise.
+</p>
+
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>
+        Inventory system with holdable items
+        <span class="arrow1">▼</span>
+      </summary>
+      <h3>🎒 Holding and Inventory</h3>
+     <p>
+  Certain objects in the game can be picked up directly by hand,
+  while others are automatically stored in the inventory.<br><br>
+
+  Large objects, for example, are placed directly into the inventory.
+  However, frequently used items such as the spear are handled differently,
+  as storing them in the inventory would interrupt gameplay flow.<br><br>
+
+  For these items, interaction is managed through an interface called
+  <strong>'IInteractable'</strong>, with the specific behavior controlled
+  by the interactable object itself.<br><br>
+
+  In the ScriptableObject data, the item type is marked as <strong>'Hold'</strong>.
+  This restricts the player’s interaction to picking up, dropping,
+  and using the item only.<br><br>
+
+  If an item is classified as an inventory item, it is automatically added
+  to the player’s inventory and can be accessed whenever needed.
+</p>
+<h3>🧰 Inventory Behaviour</h3>
+<p>
+  The inventory system consists of two equip slots located on the left side
+  of the interface.<br><br>
+
+  The first slot functions as the main equip slot,
+  while the second acts as an additional slot.<br><br>
+
+  Items can be dragged and dropped into the main slot
+  to instantiate and use them immediately.<br><br>
+
+  The additional slot allows players to swap equipped items
+  using the <strong>'Q'</strong> key, enabling quick and efficient
+  equipment switching during gameplay.
+</p>
+
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>
+        Dynamic day–night cycle
+        <span class="arrow1">▼</span>
+      </summary>
+      <p>
+        Time progresses naturally, affecting lighting, atmosphere,
+        and gameplay behavior.
+      </p>
+    </details>
+  </li>
+
+</ul>
+
+
+      <!-- ⚙️ Technologies Used -->
+      <h3>🧩 Technologies Used</h3>
+      <div class="tech-stack">
+        <span><i class="fa-brands fa-unity"></i> Unity 3D</span>
+        <span><i class="fa-solid fa-code"></i> C#</span>
+      </div>
+
+      <!-- 👥 Contributors -->
+<h3>👥 Contributors</h3>
+<ul class="feature-list">
+  <li>🎨 <strong>Parven </strong> - Art & Design</li>
+  <li>💻 <strong>Mohamed Musthafa</strong> - Lead Programmer</li>
+</ul>
+
+
+      <!-- 🕹️ Availability -->
+      <h3>🎮 Availability</h3>
+      <p>Available as an open-source project on <strong>GitHub</strong> for developers and Unity enthusiasts.</p>
+
+      <!-- 🔗 Links -->
+      <div class="icon-row-availability">
+        <a href="https://github.com/musthafa45/The-Lost-Man"
+           title="View on GitHub" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub-View_Project-181717?style=for-the-badge&logo=github&logoColor=white" 
+                alt="View on GitHub" class="github-badge">
+        </a>
+        
+      </div>
+
+    </div>
+
+    <!-- 🧾 Footer -->
+    <footer>
+      <p>© 2025 Mohamed Musthafa | Lostman Island</p>
+    </footer>
+  </div>
+
+  <!-- 🎞️ Carousel Script -->
+  <script>
+    const carousel = document.querySelector('.carousel-track');
+    const items = document.querySelectorAll('.carousel-item');
+    const prevBtn = document.querySelector('.arrow.left');
+    const nextBtn = document.querySelector('.arrow.right');
+    let currentIndex = 0;
+
+    function scrollToIndex(index) {
+      const scrollPos = items[index].offsetLeft;
+      carousel.scrollTo({ left: scrollPos, behavior: 'smooth' });
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % items.length;
+      scrollToIndex(currentIndex);
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      scrollToIndex(currentIndex);
+    });
+  </script>
+</body>
+</html>
