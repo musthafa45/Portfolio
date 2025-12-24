@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lostman Island | Mohamed Musthafa</title>
+  <title>Other Mechanics & Tools | Mohamed Musthafa</title>
 
   <!-- Styles & Fonts -->
   <link rel="stylesheet" href="../../style.css">
@@ -22,12 +22,13 @@
 
     <!-- 🧩 Main Card -->
     <div class="card">
-      <h1>Lostman Island</h1>
-      <div class="status-tag progress">In Progress</div>
+      <h1>Other Mechanics & Tools</h1>
+      <div class="status-tag done">Released</div>
 
       <!-- 📝 Game Description -->
       <p>
-        <strong>Lostman Island</strong> is an FPS game where you're stuck on an island. Hunt fish, grab fruits, and build a boat to escape. Survive the nights against monster. Craft your way to freedom through day and night challenges.
+        I Have developed various game mechanics and tools in Unity over the years, including inventory systems,
+         health systems, AI behaviors, procedural generation, and more. This collection showcases some of these smaller projects and prototypes that demonstrate my versatility and problem-solving skills in game development.
       </p>
 
       <!-- 🎥 Trailer + Screenshot Carousel -->
@@ -38,8 +39,8 @@
           <div class="carousel-item video-item">
             <iframe
               id="yt-trailer"
-              src="https://www.youtube.com/embed/vxqZ7yKhmmM?enablejsapi=1&origin=http://localhost"
-              title="Lostman Island Trailer"
+              src="https://www.youtube.com/embed/PYcE5SJp9sk?enablejsapi=1&origin=http://localhost"
+              title="Inventory System Trailer"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
@@ -48,8 +49,8 @@
           <div class="carousel-item video-item">
             <iframe
               id="yt-trailer"
-              src="https://www.youtube.com/embed/p_wsFFid0uQ?enablejsapi=1&origin=http://localhost"
-              title="Lostman Island Trailer"
+              src="https://www.youtube.com/embed/-_EbZQM34IQ?enablejsapi=1&origin=http://localhost"
+              title="Ik Hands Trailer"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
@@ -58,8 +59,8 @@
           <div class="carousel-item video-item">
             <iframe
               id="yt-trailer"
-              src="https://www.youtube.com/embed/0P2FT1_UsQE?enablejsapi=1&origin=http://localhost"
-              title="Lostman Island Trailer"
+              src="https://www.youtube.com/embed/ex2UYO4yCkc?enablejsapi=1&origin=http://localhost"
+              title="Enemy AI Trailer"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
@@ -68,8 +69,8 @@
           <div class="carousel-item video-item">
             <iframe
               id="yt-trailer"
-              src="https://www.youtube.com/embed/87nAOztd7iQ?enablejsapi=1&origin=http://localhost"
-              title="Lostman Island Trailer"
+              src="https://www.youtube.com/embed/uU32Zi0HaSw?enablejsapi=1&origin=http://localhost"
+              title="Torch System And Doors Trailer"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
@@ -78,8 +79,8 @@
           <div class="carousel-item video-item">
             <iframe
               id="yt-trailer"
-              src="https://www.youtube.com/embed/tPcH4hJVf38?enablejsapi=1&origin=http://localhost"
-              title="Lostman Island Trailer"
+              src="https://www.youtube.com/embed/94Vf75ATRVk?enablejsapi=1&origin=http://localhost"
+              title="Collectables And Examination System Trailer"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
@@ -96,25 +97,26 @@
   <li>
     <details>
       <summary>
-        Spear-based fishing system
+        Resident evil 2 Inventory System
         <span class="arrow1">▼</span>
       </summary>
      <p>
-  I am utilizing a basic Rigidbody with AddForce to propel an object towards a spear.<br><br>
+  Similar look, inspired by RE2.<br>
+PSX-style inventory system.<br>
+<br>
+Inventory is accessible only via keyboard.<br>
+Player can equip items.<br>
+Player can inspect items.<br>
+<br>
+Player is able to drop items.<br>
+If a dropped item overlaps another item, a drop-item sensor detects nearby items and places the item within a safe distance.<br>
+<br>
+Player wallet system.<br>
+Player health condition/status.<br>
+<br>
+Each item has its own info panel.<br>
+Each object is stored using Scriptable Objects.<br>
 
-  The direction is derived from the camera towards the raycast hit point,
-  then normalized to the spear's position.<br><br>
-
-  When the spear hits the fish at its body position,
-  I've already set up an empty object on the spear.<br><br>
-
-  Upon impact, this object adjusts its position based on the fish's position.<br><br>
-
-  The fish has a script called <strong>'Follow'</strong> that tracks this spear edge point's
-  position and rotation.<br><br>
-
-  Additionally, there's a static event that triggers all fish to become alert
-  and panic, resembling real-world behavior.
 </p>
 
     </details>
@@ -123,21 +125,18 @@
   <li>
     <details>
       <summary>
-        Coconut gathering using thrown stones
+        Door Interactions Using Procedural Hand IK
         <span class="arrow1">▼</span>
       </summary>
      <p>
-  These coconut trees can generate coconuts procedurally and also spawn stones within a specific radius
-  by utilizing a random UnitSphere.<br><br>
+  Main tool: Animation Rigging Package.<br>
+<br>
+To initiate the door knob opening animation, an IK (Inverse Kinematics) target is placed at the door knob position.<br>
+This IK target smoothly lerps toward the player’s hand as the player approaches the knob, triggering the animation.<br>
+Once the knob receives the interaction notification, it rotates itself.<br>
+Since the IK rotation already follows the knob position, the player’s hand naturally follows the knob’s movement.<br>
+As a result, the final output appears as a procedurally generated door knob opening animation.<br>
 
-  Whenever a coconut is hit by a stone, it gradually weakens due to the impact.<br><br>
-
-  If its strength falls below zero, it will fall down by setting
-  <strong>rb.isKinematic</strong> to <strong>false</strong>.<br><br>
-
-  As it falls, a <strong>'Gatherable'</strong> script and ScriptableObject data are added
-  to the fallen coconut, allowing players to pick it up, store it,
-  and use it later.
 </p>
 
     </details>
@@ -146,47 +145,19 @@
   <li>
     <details>
       <summary>
-        Vehicle driving with fuel management and storage
+        Enemy Hide Behaviour(Fear Of Light)
         <span class="arrow1">▼</span>
       </summary>
-      <h3>🚚 Truck Movement</h3>
       <p>       
-  In the truck driving simulation, I utilized simple wheel colliders and torque
-  to control vehicle movement.<br><br>
+  To detect whether an enemy is affected by torchlight, a raycast combined with dot product calculations is used.<br>
+Once an enemy is detected, it implements the ILightAffectable interface, marking the object as light-affected and allowing the enemy to trigger the Run method.<br>
+<br>
+To find a hiding spot, the process is relatively simple.<br>
+A position near a collider is located, its height is evaluated along the Y-axis, and its size is verified to ensure it is a valid hiding spot using dot product calculations and raycasts.<br>
+<br>
+The hiding place is then selected on the NavMesh using a simple NavMesh Sample Position.<br>
+This position is chosen at the edge of the collider, but on the opposite side.<br>
 
-  When entering or exiting the truck, a smooth fading effect is applied.<br><br>
-
-  During the fade process, the player is repositioned to the truck seat.
-  Once the player reaches the seat, all player colliders and sensors are disabled.<br><br>
-
-  After that, the truck controller is enabled, allowing the player to drive
-  the vehicle while enjoying a full 360-degree camera view.
-      </p>
-<h3>📦 Storage on the Back</h3>
-      <p>
-  The game requires transporting a large number of objects from one place
-  to another using the truck’s back storage.<br><br>
-
-  While transporting these objects, it is important to ensure they do not fall
-  due to terrain irregularities or sudden movement.<br><br>
-
-  To solve this, I implemented a simple alignment AI that allocates a dedicated
-  space for each stored item.<br><br>
-
-  This system continuously maintains proper alignment and prevents objects
-  from collapsing or interfering with one another until the player picks them up.
-</p>
-<h3>⛽ Fuel System</h3>
-<p>
-  The fuel system is built around an interactable area highlighted using an
-  outline tool to clearly indicate where interaction is possible.<br><br>
-
-  The system checks whether the player interacts with the fuel tank
-  while holding a fuel can.<br><br>
-
-  If the conditions are met, the fuel is transferred to refill the truck,
-  and the fuel can is destroyed to indicate that the refueling process
-  has been completed.
 </p>
 
     </details>
@@ -195,22 +166,18 @@
   <li>
     <details>
       <summary>
-        Hiding system with sound-based enemy detection
+        Horror House And Doors , Lerping Torch
         <span class="arrow1">▼</span>
       </summary>
      <p>
-  The hiding mechanic was inspired by <strong>Fear to Fathom</strong>,
-  aiming to recreate a similar sense of tension in a different way.<br><br>
+The above inventory system has been merged with this sample project.<br>
+The camera dynamically changes after obtaining the torch.<br>
+<br>
+There are three types of doors available:<br>
+Trap Door.<br>
+Key Door.<br>
+Non-Key Door.<br>
 
-  I implemented a simple door interaction system using <strong>DOTween</strong>
-  to handle smooth opening and closing animations.<br><br>
-
-  When the door is opened or closed, an internal collider checks whether
-  the player is positioned inside the hiding area.<br><br>
-
-  If the player is inside, the system switches the door material to a
-  transparent version and activates the sound detection system,
-  allowing enemies to react dynamically to player noise.
 </p>
 
     </details>
@@ -219,60 +186,31 @@
   <li>
     <details>
       <summary>
-        Inventory system with holdable items
-        <span class="arrow1">▼</span>
-      </summary>
-      <h3>🎒 Holding and Inventory</h3>
-     <p>
-  Certain objects in the game can be picked up directly by hand,
-  while others are automatically stored in the inventory.<br><br>
-
-  Large objects, for example, are placed directly into the inventory.
-  However, frequently used items such as the spear are handled differently,
-  as storing them in the inventory would interrupt gameplay flow.<br><br>
-
-  For these items, interaction is managed through an interface called
-  <strong>'IInteractable'</strong>, with the specific behavior controlled
-  by the interactable object itself.<br><br>
-
-  In the ScriptableObject data, the item type is marked as <strong>'Hold'</strong>.
-  This restricts the player’s interaction to picking up, dropping,
-  and using the item only.<br><br>
-
-  If an item is classified as an inventory item, it is automatically added
-  to the player’s inventory and can be accessed whenever needed.
-</p>
-<h3>🧰 Inventory Behaviour</h3>
-<p>
-  The inventory system consists of two equip slots located on the left side
-  of the interface.<br><br>
-
-  The first slot functions as the main equip slot,
-  while the second acts as an additional slot.<br><br>
-
-  Items can be dragged and dropped into the main slot
-  to instantiate and use them immediately.<br><br>
-
-  The additional slot allows players to swap equipped items
-  using the <strong>'Q'</strong> key, enabling quick and efficient
-  equipment switching during gameplay.
-</p>
-
-    </details>
-  </li>
-
-  <li>
-    <details>
-      <summary>
-        Dynamic day–night cycle
+        Object Examine System: 3D Model Viewer
         <span class="arrow1">▼</span>
       </summary>
       <p>
-        Time progresses naturally, affecting lighting, atmosphere,
-        and gameplay behavior.
-      </p>
+        Picking up and positioning objects uses DOTween for smooth movement.<br>
+The object smoothly moves toward the camera with a specified offset, creating a polished pick-up effect.<br>
+<br>
+Callback options allow the player to pick or leave the object.<br>
+When picked, the object is added to the inventory, indicating a seamless inventory interaction flow.<br>
+<br>
+Object rotation is handled using Unity’s IPointer interfaces for mouse input.<br>
+This provides a clean and standardized approach, ensuring responsive rotation tied directly to user input.<br>
+LocalEulerAngles are used to control rotation, allowing precise local orientation without unintended global rotation issues.<br>
+<br>
+Object zoom is implemented using mouse scroll delta.<br>
+The object’s Z position is dynamically adjusted based on scroll input, with a configurable speed value for fine-tuning responsiveness.<br>
+<br>
+The system is implemented using Unity’s New Input System.<br>
+This ensures modern input handling with improved control, flexibility, and scalability.<br>
+
+     </p>
+
     </details>
   </li>
+
 
 </ul>
 
@@ -284,23 +222,15 @@
         <span><i class="fa-solid fa-code"></i> C#</span>
       </div>
 
-      <!-- 👥 Contributors -->
-<h3>👥 Contributors</h3>
-<ul class="feature-list">
-  <li>🎨 <strong>Parven </strong> - Art & Design</li>
-  <li>💻 <strong>Mohamed Musthafa</strong> - Lead Programmer</li>
-</ul>
-
-
       <!-- 🕹️ Availability -->
       <h3>🎮 Availability</h3>
-      <p>Available as an open-source project on <strong>GitHub</strong> for developers and Unity enthusiasts.</p>
+      <p>Available as an <strong>open-source project</strong> on <strong>GitHub</strong> for developers and Unity enthusiasts.</p>
 
       <!-- 🔗 Links -->
       <div class="icon-row-availability">
-        <a href="https://github.com/musthafa45/The-Lost-Man"
+        <a href="https://github.com/musthafa45"
            title="View on GitHub" target="_blank">
-          <img src="https://img.shields.io/badge/GitHub-View_Project-181717?style=for-the-badge&logo=github&logoColor=white" 
+          <img src="https://img.shields.io/badge/GitHub-View_Projects-181717?style=for-the-badge&logo=github&logoColor=white" 
                 alt="View on GitHub" class="github-badge">
         </a>
         
