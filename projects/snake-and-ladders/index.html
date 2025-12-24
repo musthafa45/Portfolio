@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark City Defender | Mohamed Musthafa</title>
+
+  <!-- Styles & Fonts -->
+  <link rel="stylesheet" href="../../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- 🔙 Back Link -->
+    <a href="../../index.html" class="back-link" onclick="saveScroll()">
+  ← Back to Portfolio
+   </a>
+
+    <!-- 🧩 Main Card -->
+    <div class="card">
+      <h1>Dark City Defender</h1>
+      <div class="status-tag done">Released</div>
+
+      <!-- 📝 Game Description -->
+      <p>
+        <strong>Dark City Defender</strong> is a Game Jam entry featuring a 2D survival game where you play as the city's protector, fighting against dark enemy creatures. Built in Unity with a custom mouse-position shooting system and dynamic special effects.
+      </p>
+
+      <!-- 🎥 Trailer + Screenshot Carousel -->
+      <div class="screenshot-carousel">
+        <button class="arrow left">&#10094;</button>
+
+        <div class="carousel-track">
+          <!-- 🎬 YouTube Trailer -->
+          <div class="carousel-item video-item">
+            <iframe
+              id="yt-trailer"
+              src="https://www.youtube.com/embed/UGLSwfVuNdM?enablejsapi=1&origin=http://localhost" 
+              title="Dark City Defender Trailer"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <!-- 🖼️ Screenshots -->
+          <div class="carousel-item"><img src="images/screenshot1.png" alt="Last Soldier Screenshot 1"></div>
+          <div class="carousel-item"><img src="images/screenshot2.png" alt="Last Soldier Screenshot 2"></div>
+          <div class="carousel-item"><img src="images/screenshot3.png" alt="Last Soldier Screenshot 3"></div>
+          <div class="carousel-item"><img src="images/screenshot4.png" alt="Last Soldier Screenshot 4"></div>
+          <div class="carousel-item"><img src="images/screenshot5.png" alt="Last Soldier Screenshot 5"></div>
+        </div>
+
+        <button class="arrow right">&#10095;</button>
+      </div>
+
+   <!-- 🧠 Core Features -->
+      <h3>🧠 Core Features</h3>
+      <ul class="feature-list">
+        <li> Wave-based survival gameplay - eliminate all enemies to advance</li>
+        <li> Precision mouse-aimed shooting system for accurate 2D combat</li>
+        <li> Dynamic blood effects with sprite mask splatters on environment objects</li>
+        <li> Random weapon and ammo pickups spawn throughout the battlefield</li>
+        <li> Immersive environments built with Unity's URP 2D rendering pipeline</li>
+        <li> Atmospheric sound design enhancing the combat experience</li>
+      </ul>
+
+      <!-- ⚙️ Technologies Used -->
+      <h3>🧩 Technologies Used</h3>
+      <div class="tech-stack">
+        <span><i class="fa-brands fa-unity"></i> Unity 3D</span>
+        <span><i class="fa-solid fa-code"></i> C#</span>
+        <span class="tool-item"><i class="fas fa-atom"></i> 2D Physics</span>
+        <span class="tool-item"><i class="fas fa-database"></i> Scriptable Objects</span>
+      </div>
+
+      <!-- 📜 About the Game -->
+      <h3>📜 About the Game</h3>
+      <p>
+       This game was developed as part of a Game Jam challenge, creating an engaging 2D survival experience within a limited timeframe. 
+       Players take on the role of the city's defender, protecting against invading dark creatures. 
+       Each wave must be cleared of all enemies before they overrun the city—failure means the destruction of your home. 
+       Survival depends on scavenging ammunition and weapons scattered across the area.
+       The game features a custom mouse-aimed shooting system, dynamic blood effects using sprite masks, and immersive environments created with Unity's URP 2D rendering pipeline.
+       Atmospheric sound design enhances the intensity, delivering an engaging combat experience.
+      </p>
+
+<!-- 💡 Challenges -->
+      <h3>💡 Development Challenges</h3>
+      <ul class="challenge-list">
+        <li><strong>Mouse-Aimed Shooting:</strong> Calculating accurate aim direction and projectile trajectory while handling player sprite flipping</li>
+        <li><strong>Animation Blending:</strong> Integrating melee attack animations that properly override idle and walking states without breaking transitions</li>
+        <li><strong>Flying Enemy AI:</strong> Programming intelligent flight patterns with attack behaviors and pathfinding toward invasion targets</li>
+        <li><strong>Game Jam Time Management:</strong> Balancing gameplay difficulty, weapon variety, and enemy progression within a tight deadline</li>
+        <li><strong>Core Systems:</strong> Implementing interconnected spawn systems, wave management logic, and dynamic UI updates</li>
+      </ul>
+
+      <!-- 🕹️ Availability -->
+      <h3>🎮 Availability</h3>
+      <p>Available as a playable game on <strong>Itch.io</strong> and an open-source project on <strong>GitHub</strong> for developers and Unity enthusiasts.</p>
+
+      <!-- 🔗 Links -->
+      <div class="icon-row-availability">
+        <a href="https://musthafa45.itch.io/dark-city-defender" 
+           title="Play on Itch.io" target="_blank">
+          <img src="https://static.itch.io/images/badge-color.svg" 
+               alt="Play on Itch.io" class="itch-badge">
+        </a>
+
+        <a href="https://github.com/musthafa45/Dark_City_Defender-GameJam"
+           title="View on GitHub" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub-View_Project-181717?style=for-the-badge&logo=github&logoColor=white" 
+                alt="View on GitHub" class="github-badge">
+        </a>
+        
+      </div>
+
+    </div>
+
+    <!-- 🧾 Footer -->
+    <footer>
+      <p>© 2025 Mohamed Musthafa | Dark City Defender</p>
+    </footer>
+  </div>
+
+  <!-- 🎞️ Carousel Script -->
+  <script>
+    const carousel = document.querySelector('.carousel-track');
+    const items = document.querySelectorAll('.carousel-item');
+    const prevBtn = document.querySelector('.arrow.left');
+    const nextBtn = document.querySelector('.arrow.right');
+    let currentIndex = 0;
+
+    function scrollToIndex(index) {
+      const scrollPos = items[index].offsetLeft;
+      carousel.scrollTo({ left: scrollPos, behavior: 'smooth' });
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % items.length;
+      scrollToIndex(currentIndex);
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      scrollToIndex(currentIndex);
+    });
+  </script>
+</body>
+</html>
