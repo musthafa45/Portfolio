@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dark City Defender | Mohamed Musthafa</title>
+  <title>Snakes And Ladders Multiplayer | Mohamed Musthafa</title>
 
   <!-- Styles & Fonts -->
   <link rel="stylesheet" href="../../style.css">
@@ -22,12 +22,12 @@
 
     <!-- 🧩 Main Card -->
     <div class="card">
-      <h1>Dark City Defender</h1>
+      <h1>Snakes And Ladders Multiplayer</h1>
       <div class="status-tag done">Released</div>
 
       <!-- 📝 Game Description -->
       <p>
-        <strong>Dark City Defender</strong> is a Game Jam entry featuring a 2D survival game where you play as the city's protector, fighting against dark enemy creatures. Built in Unity with a custom mouse-position shooting system and dynamic special effects.
+        <strong>Snakes And Ladders Multiplayer</strong> is a multiplayer online version of the classic board game Snakes and Ladders, built in Unity using Netcode for GameObjects (NGO) for networking. It uses Lobby Services to support different match tiers and Relay for seamless connections without requiring port forwarding, allowing players to connect and play together over the internet with real-time updates and smooth gameplay.
       </p>
 
       <!-- 🎥 Trailer + Screenshot Carousel -->
@@ -39,8 +39,8 @@
           <div class="carousel-item video-item">
             <iframe
               id="yt-trailer"
-              src="https://www.youtube.com/embed/UGLSwfVuNdM?enablejsapi=1&origin=http://localhost" 
-              title="Dark City Defender Trailer"
+              src="https://www.youtube.com/embed/OEvgTUYn85Q?enablejsapi=1&origin=http://localhost"
+              title="Snakes And Ladders Multiplayer Trailer"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
@@ -48,11 +48,13 @@
           </div>
 
           <!-- 🖼️ Screenshots -->
-          <div class="carousel-item"><img src="images/screenshot1.png" alt="Last Soldier Screenshot 1"></div>
-          <div class="carousel-item"><img src="images/screenshot2.png" alt="Last Soldier Screenshot 2"></div>
-          <div class="carousel-item"><img src="images/screenshot3.png" alt="Last Soldier Screenshot 3"></div>
-          <div class="carousel-item"><img src="images/screenshot4.png" alt="Last Soldier Screenshot 4"></div>
-          <div class="carousel-item"><img src="images/screenshot5.png" alt="Last Soldier Screenshot 5"></div>
+          <div class="carousel-item"><img src="images/screenshot1.jpg" alt="Snakes And Ladders Multiplayer Screenshot 1"></div>
+          <div class="carousel-item"><img src="images/screenshot2.jpg" alt="Snakes And Ladders Multiplayer Screenshot 2"></div>
+          <div class="carousel-item"><img src="images/screenshot3.jpg" alt="Snakes And Ladders Multiplayer Screenshot 3"></div>
+          <div class="carousel-item"><img src="images/screenshot4.jpg" alt="Snakes And Ladders Multiplayer Screenshot 4"></div>
+          <div class="carousel-item"><img src="images/screenshot5.jpg" alt="Snakes And Ladders Multiplayer Screenshot 5"></div>
+          <div class="carousel-item"><img src="images/screenshot6.jpg" alt="Snakes And Ladders Multiplayer Screenshot 5"></div>
+          <div class="carousel-item"><img src="images/screenshot7.jpg" alt="Snakes And Ladders Multiplayer Screenshot 5"></div>
         </div>
 
         <button class="arrow right">&#10095;</button>
@@ -60,14 +62,20 @@
 
    <!-- 🧠 Core Features -->
       <h3>🧠 Core Features</h3>
-      <ul class="feature-list">
-        <li> Wave-based survival gameplay - eliminate all enemies to advance</li>
-        <li> Precision mouse-aimed shooting system for accurate 2D combat</li>
-        <li> Dynamic blood effects with sprite mask splatters on environment objects</li>
-        <li> Random weapon and ammo pickups spawn throughout the battlefield</li>
-        <li> Immersive environments built with Unity's URP 2D rendering pipeline</li>
-        <li> Atmospheric sound design enhancing the combat experience</li>
-      </ul>
+     <ul class="feature-list">
+  <li>Classic <strong>Snakes & Ladders</strong> with real-time <strong>2-player P2P gameplay</strong></li>
+  <li>
+    Multiple game modes:
+    <ul>
+      <li>Online Multiplayer with selectable lobbies at different entry prices</li>
+      <li>Player vs Computer (AI)</li>
+      <li>Player vs Player (Pass & Play)</li>
+    </ul>
+  </li>
+  <li>Smooth player movement with realistic dice-rolling mechanics</li>
+  <li>30-second turn timer — inactivity automatically determines match results</li>
+</ul>
+
 
       <!-- ⚙️ Technologies Used -->
       <h3>🧩 Technologies Used</h3>
@@ -76,28 +84,54 @@
         <span><i class="fa-solid fa-code"></i> C#</span>
         <span class="tool-item"><i class="fas fa-atom"></i> 2D Physics</span>
         <span class="tool-item"><i class="fas fa-database"></i> Scriptable Objects</span>
+       <span class="tool-item"><i class="fas fa-project-diagram"></i> Bezier Curve</span>
       </div>
 
-      <!-- 📜 About the Game -->
-      <h3>📜 About the Game</h3>
-      <p>
-       This game was developed as part of a Game Jam challenge, creating an engaging 2D survival experience within a limited timeframe. 
-       Players take on the role of the city's defender, protecting against invading dark creatures. 
-       Each wave must be cleared of all enemies before they overrun the city—failure means the destruction of your home. 
-       Survival depends on scavenging ammunition and weapons scattered across the area.
-       The game features a custom mouse-aimed shooting system, dynamic blood effects using sprite masks, and immersive environments created with Unity's URP 2D rendering pipeline.
-       Atmospheric sound design enhances the intensity, delivering an engaging combat experience.
-      </p>
+     <!-- 📜 About the Game -->
+<h3>📜 About the Game</h3>
+<p>
+  <strong>Snakes And Ladders Multiplayer</strong> is a modern online adaptation of the classic board game, designed to deliver smooth and fair real-time multiplayer gameplay. The game supports multiple play styles, including online P2P matches, AI opponents, and local pass-and-play, making it accessible for both casual and competitive players.
+</p>
 
-<!-- 💡 Challenges -->
-      <h3>💡 Development Challenges</h3>
-      <ul class="challenge-list">
-        <li><strong>Mouse-Aimed Shooting:</strong> Calculating accurate aim direction and projectile trajectory while handling player sprite flipping</li>
-        <li><strong>Animation Blending:</strong> Integrating melee attack animations that properly override idle and walking states without breaking transitions</li>
-        <li><strong>Flying Enemy AI:</strong> Programming intelligent flight patterns with attack behaviors and pathfinding toward invasion targets</li>
-        <li><strong>Game Jam Time Management:</strong> Balancing gameplay difficulty, weapon variety, and enemy progression within a tight deadline</li>
-        <li><strong>Core Systems:</strong> Implementing interconnected spawn systems, wave management logic, and dynamic UI updates</li>
-      </ul>
+<p>
+  Built using <strong>Unity</strong> and <strong>Netcode for GameObjects</strong>, the game leverages <strong>Lobby Services</strong> for match discovery and tier-based lobbies, and <strong>Relay</strong> for seamless peer-to-peer connections without port forwarding. Player movement is animated using <strong>Bezier curve interpolation</strong> to ensure smooth transitions across the board, while turn-based logic and time limits maintain match flow and fairness.
+</p>
+
+<p>
+  The project focuses on clean architecture, scalable multiplayer logic, and user-friendly UX, making it suitable for players of all ages while remaining technically robust for online play.
+</p>
+
+
+      <!-- 💡 Development Challenges -->
+<h3>💡 Development Challenges</h3>
+<ul class="challenge-list">
+  <li>
+    <strong>Movement & State Synchronization:</strong>
+    Ensuring player movement, dice rolls, turn timers, and win/loss results stayed perfectly synchronized across all clients in real time.
+  </li>
+
+  <li>
+    <strong>Handling Player Disconnections:</strong>
+    Detecting unexpected player disconnects and gracefully ending or resolving matches without breaking the game state.
+  </li>
+
+  <li>
+    <strong>Turn-Based Logic in Multiplayer:</strong>
+    Managing strict turn order and preventing duplicate or out-of-turn actions in a networked environment.
+  </li>
+
+  <li>
+    <strong>Latency & Network Delay:</strong>
+    Minimizing the impact of network latency to keep dice rolls and player movement feeling responsive and fair.
+  </li>
+
+  <li>
+  <strong>Multi-Tier Lobbies:</strong>
+  Designing lobby tiers with different entry costs to support casual and competitive matchmaking.
+</li>
+
+</ul>
+
 
       <!-- 🕹️ Availability -->
       <h3>🎮 Availability</h3>
@@ -105,13 +139,13 @@
 
       <!-- 🔗 Links -->
       <div class="icon-row-availability">
-        <a href="https://musthafa45.itch.io/dark-city-defender" 
+        <a href="https://musthafa45.itch.io/snakes-and-ladders-multiplayer" 
            title="Play on Itch.io" target="_blank">
           <img src="https://static.itch.io/images/badge-color.svg" 
                alt="Play on Itch.io" class="itch-badge">
         </a>
 
-        <a href="https://github.com/musthafa45/Dark_City_Defender-GameJam"
+        <a href="https://github.com/musthafa45/Snakes-And-Ladders-Online"
            title="View on GitHub" target="_blank">
           <img src="https://img.shields.io/badge/GitHub-View_Project-181717?style=for-the-badge&logo=github&logoColor=white" 
                 alt="View on GitHub" class="github-badge">
@@ -123,7 +157,7 @@
 
     <!-- 🧾 Footer -->
     <footer>
-      <p>© 2025 Mohamed Musthafa | Dark City Defender</p>
+      <p>© 2025 Mohamed Musthafa | Snakes And Ladders Multiplayer</p>
     </footer>
   </div>
 
