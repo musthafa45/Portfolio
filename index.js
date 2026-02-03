@@ -1,24 +1,24 @@
-const projectCards = document.querySelectorAll('.project-card');
+// const projectCards = document.querySelectorAll('.project-card');
 
-projectCards.forEach(card => {
-  const video = card.querySelector('.project-video');
+// projectCards.forEach(card => {
+//   const video = card.querySelector('.project-video');
 
-  card.addEventListener('mouseenter', () => {
-    if (video) {
-      video.currentTime = 0;
-      video.play();
-      video.style.opacity = "1";
-    }
-  });
+//   card.addEventListener('mouseenter', () => {
+//     if (video) {
+//       video.currentTime = 0;
+//       video.play();
+//       video.style.opacity = "1";
+//     }
+//   });
 
-  card.addEventListener('mouseleave', () => {
-    if (video) {
-      video.pause();
-      video.currentTime = 0;
-      video.style.opacity = "0";
-    }
-  });
-});
+//   card.addEventListener('mouseleave', () => {
+//     if (video) {
+//       video.pause();
+//       video.currentTime = 0;
+//       video.style.opacity = "0";
+//     }
+//   });
+// });
 
 const items = document.querySelectorAll('.menu-item');
 let currentIndex = 0;
@@ -55,7 +55,8 @@ startBtn.addEventListener('click', () => {
 // Initialize pointer on page load
 window.addEventListener('load', updatePointer);
 window.addEventListener('resize', updatePointer); // reposition if window changes
-window.scrollTo({ top: y, behavior: "smooth" });
+window.scrollTo({ top: 0, behavior: "smooth" });
+
 
   // Save scroll position
   window.addEventListener("beforeunload", () => {
@@ -63,12 +64,13 @@ window.scrollTo({ top: y, behavior: "smooth" });
   });
 
   // Restore scroll position
-  window.addEventListener("load", () => {
-    const scrollY = sessionStorage.getItem("scrollY");
-    if (scrollY !== null) {
-      window.scrollTo(0, parseInt(scrollY));
-    }
-  });
+window.addEventListener("load", () => {
+  const y = sessionStorage.getItem("scrollY");
+  if (y !== null) {
+    window.scrollTo({ top: parseInt(y), behavior: "smooth" });
+  }
+});
+
 
 
   function saveScroll() {
@@ -81,5 +83,15 @@ window.scrollTo({ top: y, behavior: "smooth" });
       window.scrollTo(0, parseInt(y));
     }
   });
+
+const video = document.querySelector('.project-video');
+
+if (video) {
+  // Video exists → safe to use
+  video.play().catch(err => {
+    console.warn('Autoplay failed:', err);
+  });
+}
+
 
   

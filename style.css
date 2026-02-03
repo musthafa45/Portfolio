@@ -587,16 +587,25 @@ summary:hover .arrow12 {
   transition: opacity 0.3s ease;
 }
 
-.project-thumb {
+.project-thumb2 {
   object-fit: cover;
-  z-index: 1;
   opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.project-thumb {
+  display: none;
 }
 
 .project-video {
-  object-fit: cover;
-  z-index: 2;
-  opacity: 0;
+  opacity: 1;
+  pointer-events: none;
 }
 
 .thumb-wrapper:hover .project-video {
