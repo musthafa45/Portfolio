@@ -38,6 +38,42 @@ body {
   box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
 }
 
+.contact-link {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  background: none;
+  border: none;
+  padding: 0;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: #00ffc8;
+  cursor: pointer;
+
+  text-decoration: none;
+}
+
+/* underline effect */
+.contact-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.25s ease;
+  margin-top: 2px;
+}
+
+.contact-link:hover::after {
+  width: 100%;
+}
+
+.contact-link:hover {
+  color: #00e0ff;
+}
+
 /* ---------- Typography ---------- */
 h1 {
   margin: 0 0 16px;
@@ -786,7 +822,19 @@ footer {
     align-items: center;
     text-align: center;
   }
+  .contact-link {
+    font-size: 15px;
+    top: 12px;
+    right: 12px;
+  }
 
+  .contact-link:hover::after {
+    width: 0; /* disable hover on touch */
+  }
+
+  .contact-link:active::after {
+    width: 100%;
+  }
   .profile-pic { width: 120px; height: 120px; }
   .project-card h3 { font-size: 1rem; }
   .project-card p { font-size: 0.9rem; }
