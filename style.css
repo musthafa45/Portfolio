@@ -38,42 +38,6 @@ body {
   box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
 }
 
-.contact-link {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-
-  background: none;
-  border: none;
-  padding: 0;
-
-  font-size: 14px;
-  font-weight: 600;
-  color: #00ffc8;
-  cursor: pointer;
-
-  text-decoration: none;
-}
-
-/* underline effect */
-.contact-link::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: currentColor;
-  transition: width 0.25s ease;
-  margin-top: 2px;
-}
-
-.contact-link:hover::after {
-  width: 100%;
-}
-
-.contact-link:hover {
-  color: #00e0ff;
-}
-
 /* ---------- Typography ---------- */
 h1 {
   margin: 0 0 16px;
@@ -168,146 +132,23 @@ h3.subtitle {
 }
 
 /* ---------- Social Icons ---------- */
-
-.game-menu {
-  margin-top: 20px;
-}
-
-.icon-row {
+.social-links {
   display: flex;
-  gap: 12px;
-  justify-content: center;
+  gap: 1rem;
   align-items: center;
-  flex-wrap: nowrap;              /* 🔥 prevent wrapping */
-  overflow-x: auto;               /* 🔥 allows scrolling if needed */
-  scrollbar-width: none;          /* hide scrollbar in Firefox */
-  -ms-overflow-style: none;       /* hide scrollbar in IE/Edge */
 }
 
-.icon-row::-webkit-scrollbar {
-  display: none;                  /* hide scrollbar in Chrome/Safari */
-}
-
-.icon-row-availability {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  padding: 8px;
-}
-
-.icon-row-availability a img {
-  height: 44px;       /* 🔑 same height for all badges */
-  width: auto;        /* keep aspect ratio */
-  max-width: 100%;
-}
-
-.menu-item {
-  flex: 0 0 auto;                 /* 🔒 prevents shrinking */
-  font-size: 1.6rem; /* smaller than 2rem */
-  color: #eee;
-  padding: 7px;       /* less padding */
-  border-radius: 3px; /* smaller corners */
-  transition: transform 0.3s, box-shadow 0.3s, color 0.3s;
-}
-
-.pointer-triangle {
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 12px solid #ffffff; /* now points down */
-  position: absolute;
-  top: -6px; /* keep it above icons if you want */
-  left: 0;
-  transition: left 0.2s ease;
-  z-index: 10;
-}
-
-/* Optional: remove hover scaling on <a> if using menu-item already */
-.icon-row a {
-  font-size: 1.1rem;
-  transition: transform 0.2s;
-}
-
-.icon-row a:hover {
-  transform: scale(1.2);
-}
-
-/* Base style same as Start button */
-.arrow-btn,
-.start-btn {
-  width: 60px;                 /* fixed width for arrows */
-  height: 40px;                /* same height as Start button */
-  font-size: 1.1rem;           
-  font-family: 'Fira Code', monospace;
-  border-radius: 4px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0; /* remove default padding */
-
-  background: linear-gradient(135deg, #00ffc8, #007f70);
-  color: #0a0f1e;
-  border: none;
-  box-shadow: 0 4px 10px rgba(0, 255, 200, 0.2);
-}
-
-.start-btn {
-  font-size: 0.9rem;
-  letter-spacing: 0.5px; /* slightly reduced letter spacing */
-}
-
-
-/* Hover */
-.arrow-btn:hover,
-.start-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 0 2px #ccc, 0 6px 0 #555;
-  background: linear-gradient(135deg, #00e0ff, #b400ff);
+.social-links a {
+  font-size: 1.5rem;
   color: #fff;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/* Active */
-.arrow-btn:active,
-.start-btn:active {
-  transform: translateY(2px);
-  box-shadow: 0 0 0 2px #ccc, 0 2px 0 #555;
-  background: #555;
-  color: #222;
+.social-links a:hover {
+  transform: scale(1.15);
+  opacity: 0.8;
 }
-
-/* Left / Right triangle */
-.arrow-btn.left::before,
-.arrow-btn.right::before {
-  content: "";
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-}
-
-.arrow-btn.left::before {
-  border-right: 12px solid #eee; /* triangle pointing left */
-}
-
-.arrow-btn.right::before {
-  border-left: 12px solid #eee; /* triangle pointing right */
-}
-
-.button-row {
-  display: flex;
-  gap: 12px;          /* spacing between buttons */
-  align-items: center; /* vertical alignment */
-  justify-content: center; /* optional: center horizontally */
-}
-
 
 /* Social Icon Colors */
 .fa-linkedin { color: #0077b5; }
@@ -638,7 +479,7 @@ summary:hover .arrow12 {
 }
 
 #languages h2 {
-  font-size: 1.2rem;
+  font-size: 1.6rem; 
   margin-bottom: 16px;
   font-weight: 400;
 }
@@ -653,17 +494,18 @@ summary:hover .arrow12 {
 .language-item {
   background: rgba(0, 255, 200, 0.05);
   border: 1px solid rgba(0, 255, 200, 0.3);
-  padding: 8px 10px;
+  padding: 10px 12px;        /* slightly bigger */
   border-radius: 8px;
-  font-size: 0.85rem;
+  font-size: 1rem;           /* ✅ FIXED */
   color: #eee;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 140px;
-  max-width: 200px;
+  min-width: 160px;
+  max-width: 220px;
   transition: all 0.25s ease;
 }
+
 
 .language-item:hover {
   transform: translateY(-3px);
@@ -681,7 +523,6 @@ summary:hover .arrow12 {
   font-style: italic;
   color: #ccc;
 }
-
 
 /* ---------- Footer ---------- */
 footer {
@@ -831,24 +672,36 @@ footer {
     align-items: center;
     text-align: center;
   }
-  .contact-link {
-    font-size: 15px;
-    top: 12px;
-    right: 12px;
-  }
 
-  .contact-link:hover::after {
-    width: 0; /* disable hover on touch */
-  }
-
-  .contact-link:active::after {
-    width: 100%;
-  }
   .profile-pic { width: 120px; height: 120px; }
   .project-card h3 { font-size: 1rem; }
   .project-card p { font-size: 0.9rem; }
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  #languages {
+    padding: 16px 10px;
+  }
+
+  .languages-grid {
+    gap: 5px;
+    justify-content: left; /* center the skill chips */
+  }
+
+  .language-item {
+    font-size: 0.9rem;     /* slightly smaller text */
+    padding: 8px 10px;     /* reduce padding for mobile */
+    min-width: 120px;      /* allow more items per row */
+    max-width: 180px;
+  }
+  
+  .lang-name {
+    font-size: 0.95rem;    /* slightly smaller for mobile */
+  }
+
+  .lang-level {
+    font-size: 0.85rem;    /* maintain readability */
   }
 }
 
@@ -857,9 +710,6 @@ footer {
   .card { 
     padding: 16px; 
     margin-bottom: 20px; 
-  }
-  #languages {
-  padding: 16px 10px;
   }
   h1 { font-size: 1.4rem; }
   p { font-size: 0.9rem; }
@@ -870,6 +720,26 @@ footer {
 
   .icon-row-availability a img {
     height: 36px;
+  }
+
+   .languages-grid {
+    gap: 5px;
+    align-items: center;
+  }
+
+  .language-item {
+    font-size: 0.85rem;    /* smallest readable size */
+    padding: 6px 8px;
+    min-width: 100px;
+    max-width: 160px;
+  }
+
+  .lang-name {
+    font-size: 0.9rem;
+  }
+
+  .lang-level {
+    font-size: 0.8rem;
   }
 }
 

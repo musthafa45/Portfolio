@@ -17,7 +17,7 @@
 <body>
   <!-- ===== About Section ===== -->
   <section class="card about-card">
-    <button class="contact-link" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">Contact</button>
+  
     <div class="about-content">
       <img src="images/profile.jpg" alt="Mohamed Musthafa" class="profile-pic">
       <div class="text-content">
@@ -33,42 +33,41 @@
           I am also the Founder of <a href="https://play.google.com/store/apps/developer?id=Dream+Dog+Games" class="highlight" target="_blank">Dream Dog Games</a>, where I publish my indie games under my own studio.
         </p>
 
-        <!-- Social Links Menu -->
-        <div class="game-menu">
-          <div class="icon-menu-wrapper" style="position: relative;">
-            <div class="icon-row">
-              <div class="menu-item" data-link="https://www.linkedin.com/in/mohamed-musthafa-98b347230">
-                <i class="fab fa-linkedin"></i>
-              </div>
-              <div class="menu-item" data-link="https://github.com/musthafa45">
-                <i class="fab fa-github"></i>
-              </div>
-              <div class="menu-item" data-link="https://youtube.com/@gamescript-tamil">
-                <i class="fab fa-youtube"></i>
-              </div>
-              <div class="menu-item" data-link="https://musthafa45.itch.io/">
-                <i class="fab fa-itch-io"></i>
-              </div>
-              <div class="menu-item" data-link="mailto:mohamedmusthafa3679@gmail.com">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="menu-item" data-link="https://discordapp.com/users/566951093855191040">
-                <i class="fab fa-discord"></i>
-              </div>
-              <div class="menu-item" data-link="files/resume.pdf">
-                <i class="fas fa-file-download"></i>
-              </div>
-            </div>
-            <div class="pointer-triangle"></div>
-          </div>
-          <div class="menu-controls">
-            <div class="button-row">
-              <button class="arrow-btn left" id="leftBtn" aria-label="Previous"></button>
-              <button class="arrow-btn right" id="rightBtn" aria-label="Next"></button>
-              <button class="start-btn" id="startBtn" aria-label="Go to Selected Link">Start</button>
-            </div>
-          </div>
-        </div>
+        <!-- ===== Social Links ===== -->
+        <div class="social-links">
+  <a href="https://www.linkedin.com/in/mohamed-musthafa-98b347230" target="_blank" aria-label="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+
+  <a href="https://github.com/musthafa45" target="_blank" aria-label="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <a href="https://youtube.com/@gamescript-tamil" target="_blank" aria-label="YouTube">
+    <i class="fab fa-youtube"></i>
+  </a>
+
+  <a href="https://musthafa45.itch.io/" target="_blank" aria-label="Itch.io">
+    <i class="fab fa-itch-io"></i>
+  </a>
+
+  <a href="mailto:mohamedmusthafa3679@gmail.com" aria-label="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+
+  <a href="https://discordapp.com/users/566951093855191040" target="_blank" aria-label="Discord">
+    <i class="fab fa-discord"></i>
+  </a>
+
+   <a href="tel:+971567884541" aria-label="Phone">
+    <i class="fas fa-phone"></i>
+  </a>
+
+  <a href="files/resume.pdf" target="_blank" aria-label="Download Resume">
+    <i class="fas fa-file-download"></i>
+  </a>
+</div>
+
 
       </div>
     </div>
@@ -105,6 +104,33 @@
       <div class="tool-item"><i class="fas fa-globe"></i> HTML / CSS / JavaScript</div>
       <div class="tool-item"><i class="fas fa-fire"></i> Firebase (Realtime DB)</div>
       
+    </div>
+  </section>
+
+  <!-- ===== Languages Section ===== -->
+  <section id="languages" class="card section">
+    <h2 class="section-title">Languages</h2>
+    <div class="languages-grid">
+      <div class="language-item">
+        <span class="lang-name">English</span>
+        <span class="lang-level">Fluent</span>
+      </div>
+      <div class="language-item">
+        <span class="lang-name">Tamil</span>
+        <span class="lang-level">Native</span>
+      </div>
+      <div class="language-item">
+        <span class="lang-name">Hindi</span>
+        <span class="lang-level">Basic</span>
+      </div>
+      <div class="language-item">
+        <span class="lang-name">Malayalam</span>
+        <span class="lang-level">Basic</span>
+      </div>
+      <div class="language-item">
+        <span class="lang-name">Arabic</span>
+        <span class="lang-level">Basic</span>
+      </div>
     </div>
   </section>
 
@@ -362,7 +388,7 @@
           </video>
         </div>
         <div class="content">
-          <h4>Snakes And Ladders (Multiplayer Online)<br><span style="font-size: 0.9em; font-weight: normal; opacity: 0.8;">(2023)</span></h4>
+          <h4>Snakes & Ladders PVP (Online)<br><span style="font-size: 0.9em; font-weight: normal; opacity: 0.8;">(2023)</span></h4>
           <div class="tech-stack">
           <span><i class="fa-brands fa-unity"></i> Unity 3D</span>
           <span><i class="fa-solid fa-code"></i> C#</span>
@@ -375,6 +401,38 @@
           <div class="bottom">
             <div class="status-tag done"> Completed <i class="fas fa-check-circle"></i></div>
             <a href="https://mohamedmusthafa.dev/projects/snakes-and-ladders/index.html" target="_self">View Project</a>
+          </div>
+        </div>
+      </article>
+
+       <!-- Math Duel Multiplayer -->
+      <article class="project-card">
+        <div class="thumb-wrapper">
+          <img class="project-thumb2" src="images/math-duel-thumbnail.jpg" alt="Math Duel Thumbnail">
+          <video class="project-video" autoplay loop muted playsinline preload="metadata">
+            <source src="videos/math-duel.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="content">
+          <h4>Math Duel PVP (Online)<br><span style="font-size: 0.9em; font-weight: normal; opacity: 0.8;">(2022-2026)</span></h4>
+          <div class="tech-stack">
+          <span><i class="fa-brands fa-unity"></i> Unity 3D</span>
+          <span><i class="fa-solid fa-code"></i> C#</span>
+          <span><i class="fas fa-network-wired"></i> LiteNetLib</span>
+          <span><i class="fas fa-server"></i> .NET 10</span>
+          <span><i class="fas fa-cloud"></i> Docker</span>
+          <span><i class="fas fa-cloud"></i> DigitalOcean</span>
+        </div>
+          <p>
+            Math Duel is a real-time multiplayer math battle game built with LiteNetLib and .NET 10,
+             offering smooth, low-latency gameplay. The server is Dockerized and hosted on Digital Ocean,
+              ensuring reliability and scalability. Players have persistent accounts with login credentials,
+               names, and progress tracked through leaderboards and ranks, making each duel competitive, secure, and engaging.
+          </p>
+          <div class="bottom">
+            <div class="status-tag done"> Completed <i class="fas fa-check-circle"></i></div>
+            <a href="https://mohamedmusthafa.dev/projects/math-duel/index.html" target="_self">View Project</a>
           </div>
         </div>
       </article>
@@ -403,46 +461,6 @@
       </article>
 
     </div>
-  </section>
-
-  <!-- ===== Languages Section ===== -->
-  <section id="languages" class="card section">
-    <h2 class="section-title">Languages</h2>
-    <div class="languages-grid">
-      <div class="language-item">
-        <span class="lang-name">English</span>
-        <span class="lang-level">Fluent</span>
-      </div>
-      <div class="language-item">
-        <span class="lang-name">Tamil</span>
-        <span class="lang-level">Native</span>
-      </div>
-      <div class="language-item">
-        <span class="lang-name">Hindi</span>
-        <span class="lang-level">Basic</span>
-      </div>
-      <div class="language-item">
-        <span class="lang-name">Malayalam</span>
-        <span class="lang-level">Basic</span>
-      </div>
-      <div class="language-item">
-        <span class="lang-name">Arabic</span>
-        <span class="lang-level">Basic</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Contact Section ===== -->
-  <section id="contact" class="card section">
-    <h2 class="section-title">Contact Me</h2>
-    <p>If you'd like to get in touch, feel free to reach out via email or connect with me on social media. I'm always open to discussing new projects, collaborations, or opportunities to contribute my skills and passion for game development.</p>
-    <ul class="contact-list">
-<li>Email: <a href="mailto:mohamedmusthafa3679@gmail.com">mohamedmusthafa3679@gmail.com</a></li>
-<li>LinkedIn: <a href="https://www.linkedin.com/in/mohamed-musthafa-98b347230" target="_blank">LinkedIn Profile</a></li>
-<li>GitHub: <a href="https://github.com/musthafa45" target="_blank">GitHub Profile</a></li>
-<li>Instagram: <a href="https://www.instagram.com/musthafa_404?igsh=M3R2dzBlYTk4a2g4" target="_blank">@musthafa_404</a></li>
-<li>Phone: <a href="tel:+971567884541">+971 56788 4541</a></li>
-    </ul>
   </section>
 
   <!-- ===== Footer ===== -->
